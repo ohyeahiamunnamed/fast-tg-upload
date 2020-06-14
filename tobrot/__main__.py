@@ -54,12 +54,6 @@ if __name__ == "__main__" :
     )
     app.add_handler(incoming_message_handler)
     #
-    incoming_purge_message_handler = MessageHandler(
-        incoming_purge_message_f,
-        filters=Filters.command(["purge"])
-    )
-    app.add_handler(incoming_purge_message_handler)
-    #
     incoming_youtube_dl_handler = MessageHandler(
         incoming_youtube_dl_f,
         filters=Filters.command(["ytdl"])
