@@ -15,9 +15,6 @@ import aiohttp
 
 from pyrogram import MessageEntity
 
-from tobrot import (
-    TG_OFFENSIVE_API
-)
 
 
 def extract_url_from_entity(entities: MessageEntity, text: str):
@@ -102,29 +99,5 @@ async def extract_link(message, type_o_request):
         youtube_dl_username = youtube_dl_username.strip()
     if youtube_dl_password is not None:
         youtube_dl_password = youtube_dl_password.strip()
-
-
-    # additional conditional check,
-    # here to FILTER out BAD URLs
-    LOGGER.info(TG_OFFENSIVE_API)
-    if TG_OFFENSIVE_API is not None:
-        try:
-            async with aiohttp.ClientSession() as session:
-                api_url = TG_OFFENSIVE_API.format(
-                    i=url,
-                    m=custom_file_name,
-                    t=type_o_request
-                )
-                LOGGER.info(api_url)
-                async with session.get(api_url) as resp:
-                    suats = int(resp.status)
-                    err = await resp.text()
-                    if suats != 200:
-                        url = None
-                        custom_file_name = err
-        except:
-            # this might occur in case of a BAD API URL,
-            # who knows? :\
-            pass
 
     return url, custom_file_name, youtube_dl_username, youtube_dl_password
