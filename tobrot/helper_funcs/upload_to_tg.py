@@ -63,7 +63,8 @@ async def upload_to_tg(
         if not message.photo:
             new_m_esg = await message.reply_text(
                 "Found {} files".format(len(directory_contents)),
-                reply_to_message_id=message.message_id
+                quote=True
+                # reply_to_message_id=message.message_id
             )
         for single_file in directory_contents:
             # recursion: will this FAIL somewhere?
@@ -132,7 +133,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user, e
         message_for_progress_display = message
         if not edit_media:
             message_for_progress_display = await message.reply_text(
-                "Starting upload of {}".format(os.path.basename(local_file_name))
+                "starting upload of {}".format(os.path.basename(local_file_name))
             )
         if local_file_name.upper().endswith(("MKV", "MP4", "WEBM")):
             metadata = extractMetadata(createParser(local_file_name))
