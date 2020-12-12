@@ -22,11 +22,6 @@ A Telegram Torrent (and youtube-dl) Leecher based on [Pyrogram](https://github.c
 * send any one of the available command, as a reply to a valid link.
 
 
-## Issues or Feature Requests
-
-* add issues / feature requests, [here](https://github.com/gupta-vipin/fast-tg-upload/issues/new).
-
-
 ## Credits, and Thanks to
 
 * [Dan Tès](https://telegram.dog/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
