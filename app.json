@@ -14,9 +14,9 @@
     "youtube-dl",
     "leecher"
   ],
-  "repository": "https://github.com/gupta-vipin/fast-tg-upload",
-  "success_url": "https://telegram.dog/vipingupta_1",
-  "website": "https://github.com/gupta-vipin",
+  "repository": "https://github.com/ohyeahiamunnamed/fast-tg-upload",
+  "success_url": "https://telegram.dog/ohyeahiamunnamed",
+  "website": "https://github.com/ohyeahiamunnamed",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode",
